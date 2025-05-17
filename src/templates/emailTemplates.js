@@ -49,7 +49,7 @@ export const instructorEmailTemplate = (data) => {
           <img src="https://res.cloudinary.com/dzppawgat/image/upload/emailbanner_ocfqcl.png" alt="WorkPeace Logo">
         </div>
         <div class="content">
-          <p>Dear ${data.firstName},</p>
+          <p>Dear ${data.first_name},</p>
           
           <p>We extend our sincere gratitude for your application for the instructor position at WorkPeace Academy.</p>
           
@@ -128,9 +128,9 @@ export const contactEmailTemplate = (data) => {
         <div class="content">
           <h2>New Contact Form Submission</h2>
           
-          <div class="contact-details">            <p><strong>Name:</strong> ${data.fullname}</p>
+          <div class="contact-details">            <p><strong>Name:</strong> ${data.full_name}</p>
             <p><strong>Email:</strong> ${data.email}</p>
-            <p><strong>Mobile Number:</strong> ${data.mobile}</p>
+            <p><strong>Mobile Number:</strong> ${data.phone}</p>
           </div>
 
           <div class="message-box">
@@ -199,9 +199,9 @@ export const hiringEmailTemplate = (data) => {
           <p>A new consultation request has been received from:</p>
           
           <div class="contact-details">
-            <p><strong>Name:</strong> ${data.firstName} ${data.lastName}</p>
-            <p><strong>Work Email:</strong> ${data.workEmail}</p>
-            <p><strong>Mobile Number:</strong> ${data.mobileNumber}</p>
+            <p><strong>Name:</strong> ${data.firstname} ${data.lastname}</p>
+            <p><strong>Work Email:</strong> ${data.email}</p>
+            <p><strong>Mobile Number:</strong> ${data.mobile}</p>
           </div>
 
           <div class="next-steps">
