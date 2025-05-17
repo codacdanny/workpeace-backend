@@ -11,10 +11,10 @@ export const instructorFormValidation = [
 ];
 
 export const contactFormValidation = [
-  body("fullname").trim().notEmpty().withMessage("Full name is required"),
-  body("email").isEmail().withMessage("Valid email address is required"),
-  body("mobile").notEmpty().withMessage("Mobile number is required"),
-  body("message").notEmpty().withMessage("Message is required"),
+  body("fullname", "Full name is required").trim().notEmpty(),
+  body("email", "Valid email address is required").isEmail(),
+  body("mobile", "Mobile number is required").trim().notEmpty(),
+  body("message", "Message is required").trim().notEmpty(),
 ];
 
 export const hiringFormValidation = [

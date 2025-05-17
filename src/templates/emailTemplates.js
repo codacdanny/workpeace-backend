@@ -128,10 +128,9 @@ export const contactEmailTemplate = (data) => {
         <div class="content">
           <h2>New Contact Form Submission</h2>
           
-          <div class="contact-details">
-            <p><strong>Name:</strong> ${data.fullName}</p>
-            <p><strong>Email:</strong> ${data.emailAddress}</p>
-            <p><strong>Mobile Number:</strong> ${data.mobileNumber}</p>
+          <div class="contact-details">            <p><strong>Name:</strong> ${data.fullname}</p>
+            <p><strong>Email:</strong> ${data.email}</p>
+            <p><strong>Mobile Number:</strong> ${data.mobile}</p>
           </div>
 
           <div class="message-box">
