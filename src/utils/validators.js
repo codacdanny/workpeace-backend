@@ -1,13 +1,13 @@
 import { body } from "express-validator";
 
 export const instructorFormValidation = [
-  body("firstname").trim().notEmpty().withMessage("First name is required"),
-  body("lastname").trim().notEmpty().withMessage("Last name is required"),
-  body("email").isEmail().withMessage("Valid work email is required"),
-  body("mobile").notEmpty().withMessage("Mobile number is required"),
-  body("course").notEmpty().withMessage("Course expertise is required"),
-  body("occupation").notEmpty().withMessage("Occupation is required"),
-  body("reasonToJoinUs").notEmpty().withMessage("Reason to join is required"),
+  body("firstname", "First name is required").trim().notEmpty(),
+  body("lastname", "Last name is required").trim().notEmpty(),
+  body("email", "Valid work email is required").isEmail(),
+  body("mobile", "Mobile number is required").notEmpty(),
+  body("course", "Course expertise is required").notEmpty(),
+  body("occupation", "Occupation is required").notEmpty(),
+  body("reasonToJoinUs", "Reason to join is required").notEmpty(),
 ];
 
 export const contactFormValidation = [
@@ -18,8 +18,8 @@ export const contactFormValidation = [
 ];
 
 export const hiringFormValidation = [
-  body("firstname").trim().notEmpty().withMessage("First name is required"),
-  body("lastname").trim().notEmpty().withMessage("Last name is required"),
-  body("email").isEmail().withMessage("Valid work email is required"),
-  body("mobile").notEmpty().withMessage("Mobile number is required"),
+  body("firstname", "First name is required").trim().notEmpty(),
+  body("lastname", "Last name is required").trim().notEmpty(),
+  body("email", "Valid work email is required").isEmail(),
+  body("mobile", "Mobile number is required").notEmpty(),
 ];
