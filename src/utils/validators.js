@@ -4,8 +4,8 @@ export const instructorFormValidation = [
   body("first_name", "First name is required").trim().notEmpty(),
   body("last_name", "Last name is required").trim().notEmpty(),
   body("email", "Valid work email is required").isEmail(),
-  body("phone", "Mobile number is required").notEmpty(),
-  body("industry", "Course expertise is required").notEmpty(),
+  body("phone", "Phone number is required").notEmpty(),
+  body("industry", "Industry/Course expertise is required").notEmpty(),
   body("occupation", "Occupation is required").notEmpty(),
   body("reason_to_join", "Reason to join is required").notEmpty(),
 ];

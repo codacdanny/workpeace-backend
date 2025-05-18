@@ -9,11 +9,17 @@ import {
   contactFormValidation,
   hiringFormValidation,
 } from "../utils/validators.js";
+import { upload } from "../utils/fileUpload.js";
 
 const router = express.Router();
 
 // Instructor application route
-router.post("/instructor", instructorFormValidation, handleInstructorForm);
+router.post(
+  "/instructor",
+  upload.single("resume"),
+  instructorFormValidation,
+  handleInstructorForm
+);
 
 // Contact form route
 router.post("/contact", contactFormValidation, handleContactForm);

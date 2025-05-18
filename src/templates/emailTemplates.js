@@ -1,5 +1,5 @@
 export const instructorEmailTemplate = (data) => {
-  return `
+  `
     <!DOCTYPE html>
     <html>
     <head>
@@ -49,7 +49,23 @@ export const instructorEmailTemplate = (data) => {
           <img src="https://res.cloudinary.com/dzppawgat/image/upload/emailbanner_ocfqcl.png" alt="WorkPeace Logo">
         </div>
         <div class="content">
-          <p>Dear ${data.first_name},</p>
+        <p>Dear ${data.first_name},</p>
+          
+          <h3>New Instructor Application Details:</h3>
+          <div class="details">
+            <p><strong>Name:</strong> ${data.first_name} ${data.last_name}</p>
+            <p><strong>Email:</strong> ${data.email}</p>
+            <p><strong>Phone:</strong> ${data.phone}</p>
+            <p><strong>Industry:</strong> ${data.industry}</p>
+            <p><strong>Occupation:</strong> ${data.occupation}</p>
+            <p><strong>Reason to Join:</strong> ${data.reason_to_join}</p>
+            <p><strong>Resume:</strong> Attached</p>
+          </div>
+
+          <p>We extend our sincere gratitude for your application for the instructor position at WorkPeace Academy.</p>
+          
+          <p>Your interest in contributing to our team has not gone unnoticed, and we are enthusiastic about the prospect of having someone of your caliber join us.</p>turn 
+          <p>Dear ${data.firstname},</p>
           
           <p>We extend our sincere gratitude for your application for the instructor position at WorkPeace Academy.</p>
           

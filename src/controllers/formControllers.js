@@ -21,15 +21,49 @@ export const handleInstructorForm = async (req, res) => {
   if (validationError) return validationError;
 
   try {
+    // Get the resume file information
+    const resumeFile = req.file;
+    if (!resumeFile) {
+      return res.status(400).json({
+        success: false,
+        message: "Resume file is required",
+      });
+    }
+
+    // Prepare form data for email
+    const formData = {
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      phone: req.body.phone,
+      industry: req.body.industry,
+      occupation: req.body.occupation,
+      reason_to_join: req.body.reason_to_join,
+      resumePath: resumeFile.path,
+    };
+
     const mailOptions = {
       from: `"WorkPeace Forms" <${process.env.SMTP_USER}>`,
       to: process.env.TO_EMAIL,
       subject: "New Instructor Application",
-      html: instructorEmailTemplate(req.body),
+      html: instructorEmailTemplate(formData),
+      attachments: [
+        {
+          filename: resumeFile.originalname,
+          path: resumeFile.path,
+        },
+      ],
     };
 
     await transporter.sendMail(mailOptions);
-    res.json({ success: true, message: "Application submitted successfully!" });
+    res.json({
+      success: true,
+      message: "Application submitted successfully!",
+      data: {
+        ...formData,
+        resumeFile: resumeFile.filename,
+      },
+    });
   } catch (err) {
     console.error("Mail error:", err);
     res
